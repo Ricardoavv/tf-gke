@@ -1,6 +1,6 @@
 provider "google" {
   project = "tf-ai-gke"
-  region = "us-cental1"
+  region = "us-central1"
 }
 
 terraform {
