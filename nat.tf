@@ -9,10 +9,10 @@ resource "google_compute_router_nat" "nat" {
   subnetwork {
     
     name = google_compute_subnetwork.private.id
-    ssource_ip_ranges_to_nat = ["ALL_IP_RANGES"] 
+    source_ip_ranges_to_nat = ["ALL_IP_RANGES"] 
   }
-
-  nat_ips = [google_compute_addres.nat.self_link]
+  
+  nat_ips = [google_compute_address.nat.self_link]
 }
 
 resource "google_compute_address" "nat" {
@@ -20,7 +20,5 @@ resource "google_compute_address" "nat" {
     address_type = "EXTERNAL"
     network_tier = "PREMIUM"
 
-    depends_on = [
-      google_project_service.compute
-    ]
+    depends_on = [google_project_service.compute]
 }

@@ -40,10 +40,10 @@ resource "google_container_node_pool" "spot" {
       labels = {
         team = "devops"
         }
-     taint =  {
-       effect = "instance_type"
+     taint  {
        key = "spot"
-       value = "NO_SCHEDULE"
+       value = "instance_type"
+       effect = "NO_SCHEDULE"
      } 
      service_account =  google_service_account.kubernetes.email
     oauth_scopes = [ 
