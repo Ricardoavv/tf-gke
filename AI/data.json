@@ -1,0 +1,29 @@
+[
+    {
+        "metric": {
+            "instance": "gke-main-general-1c76eccc-j4gb:metrics"
+        },
+        "value": [
+            1681666462.428,
+            "10.166666666667282"
+        ]
+    },
+    {
+        "metric": {
+            "instance": "gke-main-general-1c76eccc-mr3k:metrics"
+        },
+        "value": [
+            1681666462.428,
+            "9.525000000000247"
+        ]
+    },
+    {
+        "metric": {
+            "instance": "gke-main-general-1c76eccc-xhg9:metrics"
+        },
+        "value": [
+            1681666462.428,
+            "9.712500000002052"
+        ]
+    }
+]
