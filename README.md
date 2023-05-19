@@ -12,7 +12,8 @@ Run the following commands in a terminal where the whole project is :
 
 this commands log you in Google cloud console, position in the working directory where the configuration files are for the
 infrastructure and then initialize a Terraform working directory,create an execution plan, 
-apply the Terraform configuration defined. (this can last a while )
+apply the Terraform configuration defined. 
+(this can last a while )
 
 Second step, access to the kubernetes cluster.
 run this command
@@ -20,7 +21,15 @@ run this command
 
 Third step, Create the deployment for the node-exporter
 
+- cd k8s
+- cd node-exporter
+- kubectl create -f 0-namespace.yaml
+- kubectl create -f 1-service-account.yaml
+- kubectl create -f 2-cluster-role.yaml
+- kubectl create -f 3-cluster-role-binding.yaml
+- kubectl create -f 4-daemonset.yaml
+- kubectl create -f 5-pod-monitoring.yaml
 
-
+fourth step, Create the deployment for the prometheus-ui
 
 kubectl -n monitoring port-forward svc/fronted 9090
