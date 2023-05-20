@@ -10,18 +10,23 @@ resource "google_container_cluster" "main" {
   subnetwork               = google_compute_subnetwork.private.self_link
 
   ip_allocation_policy {
+
     cluster_secondary_range_name  = "pods-ip-range"
     services_secondary_range_name = "services-ip-range"
-  }
 
+  }
   workload_identity_config {
+
     workload_pool = "${local.project_id}.svc.id.goog"
+
   }
 
   private_cluster_config {
+
     master_ipv4_cidr_block  = "192.168.0.0/28"
     enable_private_nodes    = true
     enable_private_endpoint = false
+
   }
 
   monitoring_config {
@@ -31,5 +36,6 @@ resource "google_container_cluster" "main" {
     managed_prometheus {
       enabled = true
     }
+
   }
 }

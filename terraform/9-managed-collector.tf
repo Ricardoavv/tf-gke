@@ -9,7 +9,7 @@ resource "google_service_account_iam_member" "collector" {
 }
 
 resource "google_project_iam_member" "collector" {
-  project = local.project_id
+  project = local.project_id 
   role    = "roles/monitoring.metricWriter"
   member  = "serviceAccount:${google_service_account.collector.email}"
 
